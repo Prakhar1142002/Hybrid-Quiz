@@ -21,7 +21,11 @@ class MainActivity : AppCompatActivity() {
                 Toast.makeText(this, "Enter your Username first", Toast.LENGTH_SHORT).show()
             }
             else{
-                val intent = Intent(this, QuizQuestionsActivity::class.java)
+//                val intent = Intent(this, QuizQuestionsActivity::class.java)
+//                intent.putExtra(Constants.USER_NAME, et_name.text.toString())
+//                startActivity(intent)
+//                finish()
+                val intent = Intent(this, MultiDomainActivity::class.java)
                 intent.putExtra(Constants.USER_NAME, et_name.text.toString())
                 startActivity(intent)
                 finish()
