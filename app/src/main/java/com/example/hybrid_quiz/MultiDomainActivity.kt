@@ -20,7 +20,29 @@ class MultiDomainActivity : AppCompatActivity() {
             val intent = Intent(this, QuizQuestionsActivity::class.java)
             intent.putExtra(Constants.USER_NAME, username)
             startActivity(intent)
-            finish()
+//            finish()
         }
+        button2.setOnClickListener {
+            val username = intent.getStringExtra(Constants.USER_NAME)
+            val intent = Intent(this, QuizQuestionsActivity2::class.java)
+            intent.putExtra(Constants.USER_NAME, username)
+            startActivity(intent)
+//            finish()
+        }
+        button3.setOnClickListener {
+            val username = intent.getStringExtra(Constants.USER_NAME)
+            val intent = Intent(this, QuizQuestionsActivity3::class.java)
+            intent.putExtra(Constants.USER_NAME, username)
+            startActivity(intent)
+//            finish()
+        }
+        button4.setOnClickListener {
+            val username = intent.getStringExtra(Constants.USER_NAME)
+            val intent = Intent(this, QuizQuestionsActivity4::class.java)
+            intent.putExtra(Constants.USER_NAME, username)
+            startActivity(intent)
+//            finish()
+        }
+
     }
 }

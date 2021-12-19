@@ -13,7 +13,7 @@ import androidx.core.content.ContextCompat
 import kotlinx.android.synthetic.main.activity_multi_domain.*
 import kotlinx.android.synthetic.main.activity_quiz_questions.*
 
-class QuizQuestionsActivity : AppCompatActivity(), View.OnClickListener {
+class QuizQuestionsActivity4 : AppCompatActivity(), View.OnClickListener {
 
     private var mCurrentPosition: Int = 1
     private var mQuestionsList: ArrayList<Question>? = null
@@ -29,8 +29,8 @@ class QuizQuestionsActivity : AppCompatActivity(), View.OnClickListener {
 
         mUserName = intent.getStringExtra(Constants.USER_NAME)
 
-        mQuestionsList = Constants.getQuestions()
-        
+        mQuestionsList = Constants.getQuestions4()
+
         setQuestion()
 
         tv_option_one.setOnClickListener(this)
@@ -74,7 +74,7 @@ class QuizQuestionsActivity : AppCompatActivity(), View.OnClickListener {
             option.setTextColor(Color.parseColor("#7A8089"))
             option.typeface = Typeface.DEFAULT
             option.background = ContextCompat.getDrawable(
-                    this,R.drawable.default_option_border_bg
+                this,R.drawable.default_option_border_bg
             )
         }
     }
@@ -101,13 +101,13 @@ class QuizQuestionsActivity : AppCompatActivity(), View.OnClickListener {
                         mCurrentPosition<=mQuestionsList!!.size ->{
                             setQuestion()
                         }else ->{
-                            val intent = Intent(this, ResultActivity::class.java)
-                            intent.putExtra(Constants.USER_NAME, mUserName)
-                            intent.putExtra(Constants.CORRECT_ANSWERS, mCorrectAnswers)
-                            intent.putExtra(Constants.TOTAL_QUESTIONS, mQuestionsList!!.size)
-                            startActivity(intent)
-                            finish()
-                        }
+                        val intent = Intent(this, ResultActivity::class.java)
+                        intent.putExtra(Constants.USER_NAME, mUserName)
+                        intent.putExtra(Constants.CORRECT_ANSWERS, mCorrectAnswers)
+                        intent.putExtra(Constants.TOTAL_QUESTIONS, mQuestionsList!!.size)
+                        startActivity(intent)
+                        finish()
+                    }
                     }
                 }else{
                     val question = mQuestionsList?.get(mCurrentPosition-1)
@@ -133,22 +133,22 @@ class QuizQuestionsActivity : AppCompatActivity(), View.OnClickListener {
         when(answer){
             1 ->{
                 tv_option_one.background = ContextCompat.getDrawable(
-                        this, drawableView
+                    this, drawableView
                 )
             }
             2 ->{
                 tv_option_two.background = ContextCompat.getDrawable(
-                        this, drawableView
+                    this, drawableView
                 )
             }
             3 ->{
                 tv_option_three.background = ContextCompat.getDrawable(
-                        this, drawableView
+                    this, drawableView
                 )
             }
             4 ->{
                 tv_option_four.background = ContextCompat.getDrawable(
-                        this, drawableView
+                    this, drawableView
                 )
             }
         }
@@ -161,7 +161,7 @@ class QuizQuestionsActivity : AppCompatActivity(), View.OnClickListener {
         tv.setTextColor(Color.parseColor("#363A43"))
         tv.setTypeface(tv.typeface, Typeface.BOLD)
         tv.background = ContextCompat.getDrawable(
-                this,R.drawable.selected_option_border_bg
+            this,R.drawable.selected_option_border_bg
         )
     }
 }

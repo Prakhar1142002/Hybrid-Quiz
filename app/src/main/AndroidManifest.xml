@@ -9,7 +9,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.HybridQuiz">
-        <activity android:name=".MultiDomainActivity"></activity>
+        <activity android:name=".QuizQuestionsActivity4"></activity>
+        <activity android:name=".QuizQuestionsActivity3" />
+        <activity android:name=".QuizQuestionsActivity2" />
+        <activity android:name=".MultiDomainActivity" />
         <activity
             android:name=".ResultActivity"
             android:label="Final Result Scores"
